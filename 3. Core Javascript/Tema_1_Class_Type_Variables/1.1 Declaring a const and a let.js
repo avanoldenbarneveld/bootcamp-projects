@@ -1,0 +1,2 @@
+const = constantVariable
+let = modifiableVariable
