@@ -1,0 +1,170 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}   % Para insertar imágenes
+\usepackage{geometry}   % Para ajustar márgenes
+\usepackage{parskip}    % Para espaciar entre párrafos
+\usepackage{hyperref}   % Para enlaces
+
+\geometry{margin=1in}   % Márgenes ajustados
+
+\title{Informe de análisis de las principales llamadas de red}
+\author{Alberto van Oldenbarneveld}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Informe de análisis de las principales llamadas de red}
+\textbf{Página web analizada: Reddit.com}
+
+\section*{Llamada 1: Solicitud GET}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/curso/Desktop/Imágenes/Llamada 1.png}
+    \caption{Captura de la solicitud GET}
+\end{figure}
+
+\textbf{Método:} GET \\
+\textbf{Status:} 200 OK \\
+\textbf{URL:} \url{https://www.reddit.com/}
+
+Esta solicitud GET obtiene el documento HTML principal de la página principal de Reddit. Incluye la estructura HTML inicial que los navegadores renderizan para mostar el contenido con enlaces a recursos adicionales (como imágenes, scripts, y hojas de estilo) que el navegador cargará posteriormente para completar la visualización de la página.
+
+\textbf{Las principales cabeceras son:} 
+\begin{itemize}
+    \item Host: www.reddit.com
+    \item User-Agent: Mozilla/5.0 (X11; Linux x86\_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36
+    \item Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+    \item Accept-Encoding: gzip, deflate, br, zstd
+    \item Accept-Language: en-US,en;q=0.9
+    \item Cookie: (varias cookies, incluyendo session\_tracker, reddit\_session, edgebucket)
+    \item Sec-Fetch-Dest: document
+    \item Sec-Fetch-Mode: navigate
+    \item Sec-Fetch-Site: none
+    \item Sec-Fetch-User: ?1
+\end{itemize}
+
+Especifican el nombre del servidor al que se hace la solicitud, el navegador y el sistema operativo, así como los tipos de contenido que acepta el cliente, así como los algoritmos de compresión. También define los idiomas preferidos del cliente, los cookies almacenados y el tipo de documento solicitado, y que ha sido iniciado por interacción del usuario.
+
+\textbf{Las principales cabeceras de respuesta son:}
+\begin{itemize}
+    \item Cache-Control: private, s-maxage=0, max-age=0, must-revalidate, no-store
+    \item Content-Encoding: gzip
+    \item Content-Length: 39302
+    \item Content-Type: text/html; charset=UTF-8
+    \item Date: Fri, 20 Sep 2024 07:42:19 GMT
+    \item Expires: -1
+    \item NEL (Network Error Logging): {"report\_to": "w3-reporting-nel", "max\_age": 14400, "include\_subdomains": false, "success\_fraction": 1.0, "failure\_fraction": 1.0}
+    \item Set-Cookie: session\_tracker=kjpbpeilornbcolphd...; Max-Age=7199; Path=/; expires=Fri, 20-Sep-2024 09:42:19 GMT; secure; SameSite=None
+    \item Strict-Transport-Security: max-age=31536000; includeSubdomains
+    \item Vary: accept-encoding
+\end{itemize}
+
+Las cabeceras de respuesta contienen información sobre la prohibición de guardar el contenido en caché, que el contenido ha sido comprimido con gzip, el tamaño del mismo, y que es HTML con codificación UTF-8, así como la fecha, dónde se deben loguear los errores de red, un cookie de seguimiento y la conexión a través de HTTPS.
+
+El cuerpo de la respuesta contiene un documento HTML con la estructura básica de la página, con enlaces a otros recursos, como son las hojas de estilo CSS, scripts de JavaScript, y el favicon. 
+
+\section*{Llamada 2: Solicitud GET}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/curso/Desktop/Imágenes/Llamada 2.png}
+    \caption{Captura de la solicitud GET fallida}
+\end{figure}
+
+\textbf{Método:} GET \\
+\textbf{Status:} Failed \\
+\textbf{URL:} \url{https://reddit.com/static/pixel.png}
+
+Esta solicitud GET ha intentado obtener una imagen llamada pixel.png, lo que solicita en el documento HTML cargado en la primera llamada. Se realiza a través de la siguiente línea de código: 
+
+\verb|<img id="hsts_pixel" src="//reddit.com/static/pixel.png">|
+
+Esta imagen se utiliza para hacer seguimiento y analíticas de los sitios visitados. Al tener instalada la extensión Ublock Origin, se ha bloqueado la carga de esta imagen. Si nos metemos en la consola podremos ver la siguiente información:
+
+\begin{verbatim}
+GET https://reddit.com/static/pixel.png net::ERR_BLOCKED_BY_CLIENT
+\end{verbatim}
+
+Quiere decir que la llamada fue bloqueada por el navegador antes de que la solicitud se envíe al servidor. 
+
+\section*{Llamadas 3-16: Solicitud GET para CSS}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/curso/Desktop/Imágenes/Llamada 3.png}
+    \caption{Carga de hojas de estilo CSS}
+\end{figure}
+
+\textbf{Método:} GET \\
+\textbf{Status:} 200 OK
+
+Las siguientes llamadas son todas para cargar documentos CSS, hojas de estilo que definen la apariencia y diseño de la web:
+
+\begin{itemize}
+    \item reddit.YXox\_dqXzrc.css
+    \item expando.gMzRK16vwrQ.css
+    \item crosspost-preview.De3P20Yb4PY.css
+    \item author-tooltip.1VKQhhDIRMI.css
+    \item listing-comments.AZZO7Kj\_O88.css
+    \item popup-notification.6-JvPBpHWMo.css
+    \item about-this-ad-modal.zVecmeeCuWY.css
+    \item crossposting-modal.Jve5ccTgZ4o.css
+    \item desktoponboarding.k2RNrAG42v4.css
+    \item videoplayer.ANmi3DZjWG4.css
+    \item videoplayercontrols.a\_TwaTy76-k.css
+\end{itemize}
+
+Estas hojas de estilo definen el diseño y la estructura visual de la página. Contienen información sobre diseños que se aplican a toda la página web, elementos que se pueden expandir y contraer, la apariencia de comentarios, pop ups, el reproductor de video incrustado, así como los botones del mismo.
+
+\section*{Llamadas 17 a 20: Solicitud GET para JavaScript}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/curso/Desktop/Imágenes/Llamada 4.png}
+    \caption{Carga de scripts JavaScript}
+\end{figure}
+
+\textbf{Método:} GET \\
+\textbf{Status:} 200 OK \\
+\textbf{URL:} \url{https://www.redditstatic.com/}
+
+Estas llamadas se hacen a scripts de JavaScript que inician la configuración inicial de JavaScript, la funcionalidad de crossposting, y el reproductor de vídeo. 
+
+En las cabeceras de solicitud se envía la información del navegador antes mencionada. Entre las cabeceras de respuesta se envía información sobre el rango de aceptación del tamaño del contenido, la compresión, el tipo de contenido, la fecha y hora de la respuesta, identificadores para el control del caché y el Network Error Logging.
+
+En los cuerpos de respuesta de las llamadas se encuentran los módulos de JavaScript que contienen jQuery, una popular biblioteca que facilita la manipulación del DOM y otras funciones de JavaScript. El segundo fragmento está relacionado con la funcionalidad de crossposting, que permite a los usuarios republicar contenido en diferentes subreddits. El tercero es un cargador de módulos, que maneja dependencias de otros archivos o módulos dentro del entorno de JavaScript, lo que es común en sistemas de JavaScript modulares como Node.js o Webpack.
+
+\section*{Llamada POST: Autenticación}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{/home/curso/Desktop/Imágenes/Llamada 5.png}
+    \caption{Solicitud POST de autenticación}
+\end{figure}
+
+\textbf{Método:} POST \\
+\textbf{Status:} 200 OK \\
+\textbf{URL:} \url{https://www.reddit.com/api/login}
+
+Esta llamada POST solicita el endpoint \texttt{/api/login}, utilizado para autenticar al usuario. 
+
+\textbf{Cabeceras de seguridad:}
+\begin{itemize}
+    \item Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+    \item x-modhash: ... (token de seguridad contra ataques CSRF)
+    \item x-signature-v2: ... (firma criptográfica para asegurar la autenticidad de la solicitud)
+\end{itemize}
+
+Las cabeceras de respuesta contienen información sobre seguridad, caché, control de acceso y políticas de errores de red, asegurando la integridad de la conexión y gestionando cómo se entrega y almacena el contenido.
+
+\section*{Conclusión}
+
+El análisis de las llamadas de red en Reddit.com revela una combinación de solicitudes GET y POST. Las solicitudes GET cargan el HTML principal, imágenes, hojas de estilo CSS y scripts de JavaScript necesarios para la correcta visualización y funcionamiento interactivo del sitio. Algunos recursos, como el \textit{tracking pixel}, pueden ser bloqueados por extensiones de bloqueo de contenido como uBlock Origin.
+
+Las solicitudes POST, como la de autenticación en \texttt{/api/login}, manejan el envío de datos al servidor, con medidas de seguridad como tokens de protección CSRF y firmas criptográficas para garantizar la autenticidad de las solicitudes. Las cabeceras de respuesta incluyen información sobre la gestión de caché, políticas de seguridad (como HSTS y XSS), y registro de errores de red (NEL).
+
+En general, las llamadas GET y POST, junto con los recursos CSS y JavaScript, trabajan en conjunto para proporcionar una experiencia de usuario segura y eficiente, facilitando la navegación, la interactividad y la autenticación en la plataforma.
+
+\end{document}

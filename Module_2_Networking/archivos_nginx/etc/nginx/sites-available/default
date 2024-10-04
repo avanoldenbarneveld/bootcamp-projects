@@ -1,0 +1,118 @@
+
+# Este servidor va a escuchar en el puerto 80 (el puerto por defecto de HTTP)
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    # Definimos que en /var/www/html van a estar todos los archivos estáticos (HTML, CSS, JavaScript, imágenes...)
+    root /var/www/html;
+
+    # Este es el HTML inicial, al que se accede automáticamente al entrar a http://0.0.0.0
+    index index.html index.htm index.nginx-debian.html;
+
+    server_name _;
+
+    # Definimos que, si no encuentra un cierto archivo, se va a devolver un error 404.
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Exponemos el archivo prueba1.html
+    location /prueba1.html {
+        try_files $uri =404;
+    }
+
+    # Exponemos la imagen en imagen1.jpg
+    location /imagen1.jpg {
+        root /var/www/html;
+        try_files $uri =404;
+    }
+
+    # Exponemos el archivo JavaScript en javascript/archivo1.js
+    location /javascript/archivo1.js {
+        root /var/www/html;
+        try_files $uri =404;
+    }
+
+    # Exponemos prueba2.html, que importa el archivo JavaScript
+    location /prueba2.html {
+        add_header Content-type text/html;
+        return 200 '<html><body><script src="/javascript/archivo1.js"></script></body></html>';
+    }
+
+    # Cambiamos el error en /error para que devuelva un error 500
+    location /error {
+        return 500;
+    }
+
+    # Implementamos las respuestas a los métodos HTTP GET, POST, PUT, DELETE en la ruta /metodo
+    location /metodo {
+        if ($request_method = GET) {
+            return 201 '{"mensaje": "Has hecho una petición GET"}';
+        }
+        if ($request_method = POST) {
+            return 201 '{"mensaje": "Has hecho una petición POST"}';
+        }
+        if ($request_method = PUT) {
+            return 201 '{"mensaje": "Has hecho una petición PUT"}';
+        }
+        if ($request_method = DELETE) {
+            return 201 '{"mensaje": "Has hecho una petición DELETE"}';
+        }
+    }
+
+    # Modificamos /cabecera para que devuelva un 204 con una cabecera inventada
+    location /cabecera {
+        add_header Inventada valor;
+        return 204;
+    }
+
+    # Redireccionamos /redireccion1 hacia w3schools.com
+    rewrite /redireccion1 https://w3schools.com redirect;
+
+    # Redireccionamos /redireccion2 hacia /cabecera
+    rewrite /redireccion2 /cabecera redirect;
+
+    # Añadimos la ruta /respuesta para devolver JSON o HTML dependiendo del parámetro en la URL
+    location /respuesta {
+        if ($arg_json) {
+            return 200 '{"mensaje": "Devolviendo JSON"}';
+        }
+        if ($arg_html) {
+            add_header Content-type text/html;
+            return 200 '<html><body>Devolviendo HTML</body></html>';
+        }
+        return 404;
+    }
+
+    # Guardamos los logs de acceso en /var/www/html/logs.log (Bonus)
+    access_log /var/www/html/logs.log;
+}
+
+# Levantamos otro servidor en el puerto 8000 para exponer únicamente el contenido de /var/www/html
+server {
+    listen 8000;
+    root /var/www/html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+# Levantamos un nuevo servidor con HTTPS en el puerto 443
+server {
+    listen 443 ssl;
+
+    # Certificado y clave para HTTPS
+    ssl_certificate /etc/nginx/certs/certificado1.pem;
+    ssl_certificate_key /etc/nginx/certs/clave1.pem;
+
+    # Autenticación básica activada
+    auth_basic "Contenido restringido";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    # Exponemos /var/www/html en HTTPS
+    root /var/www/html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

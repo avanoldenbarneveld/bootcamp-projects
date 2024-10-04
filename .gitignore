@@ -1,0 +1,2 @@
+echo "Module_2_Networking/archivos_nginx/etc/nginx/certs/certificado1.pem" >> .gitignore
+echo "Module_2_Networking/archivos_nginx/etc/nginx/certs/clave1.pem" >> .gitignore
