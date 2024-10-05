@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>Multiplicación en Bucle</title>
+</head>
+<body>
+    <script>
+/* He elegido recursión en vez de un loop para resolver el problema porque me parece más elegante.
+No he implementado límite y fallback porque es poco probable que el usuario llegue a un stack overflow. */
+        const getValidNumber = promptText => {
+            let number;
+            while (isNaN(number = parseFloat(prompt(promptText)))) {
+                alert("Por favor, introduce un número válido.");
+            }
+            return number;
+        };
+        const multiplicarRecur = () => {
+            let num1 = getValidNumber("Introduce el primer número:");
+            let num2 = getValidNumber("Introduce el segundo número:");
+
+            let resultado = num1 * num2;
+            alert(`El resultado de ${num1} * ${num2} es ${resultado}`);
+        
+            return multiplicarRecur();
+        };
+        multiplicarRecur();
+    </script>
+</body>
+</html>
