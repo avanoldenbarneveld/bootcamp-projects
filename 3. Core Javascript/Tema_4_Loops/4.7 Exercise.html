@@ -4,8 +4,6 @@
 </head>
 <body>
     <script>
-/* He elegido recursión en vez de un loop para resolver el problema porque me parece más elegante.
-No he implementado límite y fallback porque es poco probable que el usuario llegue a un stack overflow. */
         const getValidNumber = promptText => {
             let number;
             while (isNaN(number = parseFloat(prompt(promptText)))) {
@@ -13,16 +11,38 @@ No he implementado límite y fallback porque es poco probable que el usuario lle
             }
             return number;
         };
-        const multiplicarRecur = () => {
+
+        /*
+        In this scenario, a loop might be more efficient,
+        but I wanted to try both methods (recursion and loop).
+        I've implemented a recursion depth limit to avoid stack overflow,
+        Once the limit is reached, I use a loop as a fallback to ensure
+        the program continues to run smoothly.
+        */
+
+        const multiplicarRecur = (depth = 0, maxDepth = 1000) => {
+            if (depth >= maxDepth) {
+                return multiplicarLoop();
+            }
+
             let num1 = getValidNumber("Introduce el primer número:");
             let num2 = getValidNumber("Introduce el segundo número:");
 
             let resultado = num1 * num2;
             alert(`El resultado de ${num1} * ${num2} es ${resultado}`);
-        
-            return multiplicarRecur();
+
+            return multiplicarRecur(depth + 1, maxDepth);
+        };
+
+        const multiplicarLoop = () => {
+            while (true) {
+                let num1 = getValidNumber("Introduce el primer número:");
+                let num2 = getValidNumber("Introduce el segundo número:");
+
+                let resultado = num1 * num2;
+                alert(`El resultado de ${num1} * ${num2} es ${resultado}`);
+            }
         };
         multiplicarRecur();
     </script>
 </body>
-</html>
