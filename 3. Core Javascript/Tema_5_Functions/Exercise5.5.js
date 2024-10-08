@@ -2,7 +2,6 @@
 
 const countDigit = (digit, number) => {
     let count = 0;
-    // Loop through the string version of the number
     for (let char of number) {
         if (char === digit) {
             count++;
