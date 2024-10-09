@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digit Occurrence Counter</title>
+    <script>
+/* "Ask the user to enter a digit and a number, then call a function that counts how many times the digit appears in the number."
+I've solved this by creating an array, using split, because it's more concise than iterating through the string, but it's not as efficient with larger numbers */
+        function runExercise() {
+            while (true) {
+                let digit, number;
+                do {
+                    digit = prompt("Enter a single digit:");
+                } while (!/^\d$/.test(digit));
+                do {
+                    number = prompt("Enter a number:");
+                } while (!/^\d+$/.test(number));
+                const result = number.split(digit).length - 1;
+                alert(`The digit ${digit} appears ${result} times in the number ${number}.`);
+                if (!confirm("Do you want to try again?")) break;
+            }
+        }
+    </script>
+</head>
+<body onload="runExercise()">
+</body>
+</html>
