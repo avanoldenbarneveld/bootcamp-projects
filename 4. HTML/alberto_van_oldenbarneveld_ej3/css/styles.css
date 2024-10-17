@@ -1,0 +1,41 @@
+#header {
+    background-color: #ffcc00;
+    text-align: center;
+    padding: 20px;
+}
+
+.navigation {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+#main-section {
+    margin: 20px auto;
+    width: 80%;
+}
+
+.recipe-article {
+    padding: 10px 2em 5rem;
+    border: 2px solid rgb(255, 99, 71);
+    background-color: hsl(120, 100%, 50%);
+}
+
+[class*="recipe-article"] {
+    font-size: 1.2em;
+    color: darkgreen;
+}
+
+nav > a {
+    color: white;
+}
+
+body {
+    background-image: url('../pizza.png');
+    background-size: 100px auto;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+h2::after {
+    content: ' 🍕';
+}
