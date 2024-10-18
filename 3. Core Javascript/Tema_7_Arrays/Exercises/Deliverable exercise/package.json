@@ -1,0 +1,11 @@
+{
+    "name": "multiples-generator",
+    "version": "1.0.0",
+    "description": "Generate multiples of a given number",
+    "main": "exercise.js",
+    "scripts": {
+      "test": "jest",
+      "lint": "eslint ."
+    }
+  }
+  

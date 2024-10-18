@@ -1,0 +1,3 @@
+Crea un programa que pida un valor de tamaño de array por input y
+después el número del cuál se van a obtener múltiplos y devuelva un
+array con el tamaño puesto de múltiplos de ese número (2, 4 => [4, 8])
