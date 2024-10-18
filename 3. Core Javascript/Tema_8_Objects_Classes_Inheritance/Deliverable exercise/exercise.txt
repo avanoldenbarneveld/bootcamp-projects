@@ -1,0 +1,9 @@
+Crea una clase para trabajar diferentes transformaciones de un string
+inicial con diferentes métodos:
+- Conversión de todo el string a array de caracteres uno por uno
+- La ordenación de los caracteres de manera aleatoria
+- La inversión del orden de caracteres
+- Quitar las vocales
+- Quitar las consonantes.
+- Array de palabras
+- Inversión del orden de las palabras del string

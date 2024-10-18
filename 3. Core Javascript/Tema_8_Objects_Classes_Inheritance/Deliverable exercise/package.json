@@ -1,0 +1,11 @@
+{
+    "name": "stringtransformer",
+    "version": "1.0.0",
+    "description": "Generates a class to manipulate strings",
+    "main": "stringtransformer.js",
+    "scripts": {
+      "test": "jest",
+      "lint": "eslint ."
+    }
+  }
+  
