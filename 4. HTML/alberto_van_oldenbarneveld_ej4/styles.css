@@ -1,0 +1,13 @@
+ol>li:nth-child(even) {
+    background-color: grey;
+}
+
+  ul>li::marker {
+    content: '💀';
+    font-size: 1.1em;
+}
+
+ul>li:last-child::marker {
+    content: '✔️';
+    font-size: 1.5em;
+}

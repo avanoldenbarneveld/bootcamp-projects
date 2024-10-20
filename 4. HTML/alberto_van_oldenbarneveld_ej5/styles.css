@@ -1,0 +1,46 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: large;
+}
+
+Table, td, th {
+    border: black 1px solid;
+    text-align: center;
+    border-spacing: 1px;
+    padding: 1px;
+    width: 900px;
+   }
+
+   .formacion {
+    background-color: lightblue;
+    font-size: small
+   }
+
+   .firstColumn {
+    background-color: rgb(195, 255, 0);
+   }
+
+   .scrum {
+    background-color: lightpink;
+    font-style: italic;
+    font-size: large;
+   }
+
+   .sprint {
+    background-color: red;
+    font-style: italic;
+}
+
+   #almuerzo {
+    background-color: yellow;
+    color: gray
+}
+    .days {
+        background-color: #FFEB99;
+        font-weight: 900;
+    }
+
+    .noBold {
+        font-weight: normal;
+    }
+    
