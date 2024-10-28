@@ -4,7 +4,9 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint .",
+    "coverage": "jest --coverage"
   },
   "devDependencies": {
     "jest": "^29.6.2"
