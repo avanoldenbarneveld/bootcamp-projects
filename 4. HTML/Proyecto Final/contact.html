@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+   <header>
+       <h1>Ready to reach out?</h1>
+   </header>
+   <nav id="header-placeholder"></nav>
+   <script>
+       fetch("header.html")
+           .then(response => response.text())
+           .then(data => {
+               document.getElementById("header-placeholder").innerHTML = data;
+           })
+           .catch(error => console.error("Error loading header:", error));
+   </script>
+   
+   <section class="contact-container">
+       <!-- Form on the left -->
+       <div class="contact-form">
+           <h2>Get in Touch:</h2>
+           <form action="#" method="post">
+               <label for="name">Name:</label>
+               <input type="text" id="name" name="name" required>
+
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required>
+
+               <label for="message">Message:</label>
+               <textarea id="message" name="message" rows="4" required></textarea>
+
+               <button type="submit">Send Message</button>
+           </form>
+       </div>
+
+       <!-- Map iframe on the right -->
+       <div class="contact-map">
+           <h2>Office Adress</h2>
+           <iframe 
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345084746!2d144.9537353154438!3d-37.81720974201344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1274b71%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1604891860123!5m2!1sen!2sus" 
+               loading="lazy">
+           </iframe>
+       </div>
+   </section>
+   <div id="footer-placeholder"></div>
+   <script>
+       fetch("footer.html")
+           .then(response => response.text())
+           .then(data => {
+               document.getElementById("footer-placeholder").innerHTML = data;
+           })
+           .catch(error => console.error("Error loading footer:", error));
+   </script>
+   
+
+</body>
+</html>

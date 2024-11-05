@@ -1,0 +1,463 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap');
+
+/* ========== Global Styles ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #000000, #000033);
+    color: #FFFFFF;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    min-height: 100vh;
+}
+
+/* ========== Typography ========== */
+h1, h2, .hero h1, nav ul li a {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-top: 2rem;
+}
+
+p {
+    color: #CCCCCC;
+}
+
+/* ========== Navbar ========== */
+nav {
+    width: 100%;
+    background-color: #000000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #007BFF;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    overflow: hidden;
+    max-width: inherit;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-image {
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero-button {
+    padding: 0.8rem 1.5rem;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #0056b3;
+}
+
+/* ========== Main Content ========== */
+main {
+    flex-grow: 1;
+    margin-top: 4rem;
+}
+
+/* ========== Section Styles ========== */
+section {
+    max-width: 800px;
+    margin: 2rem auto;
+    line-height: 1.8;
+    text-align: left;
+    color: #DDDDDD;
+    padding: 2rem;
+}
+
+/* ========== Form and Container Styles ========== */
+.login-container, .recovery-container {
+    background-color: #1E1E2F;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    text-align: center;
+    margin: 2rem auto;
+}
+
+form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #333;
+    background-color: #333333;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== Button Styles ========== */
+.hero-button {
+    width: auto; /* Adjusts width to fit the content */
+    padding: 0.8rem 1.5rem;
+    background-color: #007BFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    display: inline-block; /* Allows it to fit content width */
+}
+
+button:hover, .hero-button:hover {
+    background-color: #0056b3;
+}
+
+/* ========== Link Styles ========== */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ========== Animations ========== */
+.welcome-message {
+    font-size: 2rem;
+    color: #FFFFFF;
+    animation: fadeIn 2s ease-in-out;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ========== Contact Page Styles ========== */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 2rem auto;
+    max-width: 1000px;
+}
+
+.contact-form, .contact-map {
+    flex: 1;
+}
+
+iframe {
+    width: 600px;
+    height: 450px;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* ========== Header Styles ========== */
+header {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* ========== Footer Styles ========== */
+footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #000033;
+    color: #CCCCCC;
+    padding: 1.5rem 2rem;
+    font-size: 0.9rem;
+    gap: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+.social-links {
+    display: flex;
+}
+
+.social-links a {
+    color: #CCCCCC;
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #FFFFFF;
+}
+
+/* ========== Page Navigation Styles ========== */
+.page-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 30rem;
+    margin: 2rem 0;
+    padding: 1rem 0;
+
+}
+
+.page-navigation a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.page-navigation a:hover {
+    color: #0056b3;
+}
+
+/* Header Container: Flex Layout for Horizontal Alignment */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Align nav and login on opposite sides */
+    align-items: center;            /* Center vertically */
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+
+/* Navigation List: Flex layout with no extra spacing */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0; /* Remove padding */
+    align-items: center; /* Ensures items are centered vertically */
+}
+
+/* Individual Navigation Links */
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Login Link Styling: Positioned on the Right */
+.login-link {
+    margin-left: auto;
+    display: flex;
+    align-items: center;            /* Ensures Login link aligns vertically with nav */
+}
+
+.login-link a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.login-link a:hover {
+    background-color: #0056b3;
+}
+
+/* ========== Responsive Media Queries ========== */
+
+/* Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Adjust header container for smaller screens */
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    /* Navigation: Stack items vertically on smaller screens */
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    /* Hero section: Stack text and image vertically */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* Adjust hero text and button */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero-button {
+        width: auto;
+        margin-top: 1rem;
+    }
+
+    /* Form containers: Reduce width for better readability */
+    .login-container, .recovery-container {
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    /* Fixed positioning and z-index for navigation */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Page Navigation Links */
+    .page-navigation {
+        gap: 5rem;
+    }
+
+    /* Ensure login button stays visible */
+    .login-link {
+        width: auto;
+        margin-top: 1rem;
+        display: block; /* Keeps it visible */
+        text-align: center;
+    }
+
+    .login-link a {
+        display: inline-block; /* Prevents it from stretching */
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    /* Adjust header font sizes */
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Form containers: Further reduce padding for smaller screens */
+    .login-container, .recovery-container {
+        padding: 1rem;
+    }
+
+    /* Contact Page: Stack form and map */
+    .contact-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Map iframe sizing */
+    iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    /* Page Navigation: Stack buttons vertically */
+    .page-navigation {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}

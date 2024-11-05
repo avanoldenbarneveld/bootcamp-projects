@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Background</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+   <header>
+       <h1>My Background</h1>
+   </header>
+   <nav id="header-placeholder"></nav>
+   <script>
+       fetch("header.html")
+           .then(response => response.text())
+           .then(data => {
+               document.getElementById("header-placeholder").innerHTML = data;
+           })
+           .catch(error => console.error("Error loading header:", error));
+   </script>
+   
+   <section>
+       <h2>Unfolding a Journey Across Borders and Technologies</h2>
+       <p>Born in Buenos Aires, raised in the Netherlands, and refined in Spain. My multicultural journey is woven through three countries, four languages, and countless unique perspectives. From learning English through subtitled shows to mastering Spanish in school, I’ve embraced internationalism from the start—an approach that today fuels my love for diverse, dynamic environments.</p>
+       
+       <h2>A Lifelong Affair with Technology</h2>
+       <p>It all started with a fascination for computers, coding, and endless possibilities. My childhood memories are filled with installing games on MS-DOS, experimenting with hardware, and building my first PC by age 11. Technology, for me, has always been about making life easier, unlocking potential, and maximizing efficiency.</p>
+
+       <h2>A Career Pivot: From Law to Tech</h2>
+       <p>Despite my tech passion, I initially pursued law, but technology never left my side. My analytical drive soon found a home in the workplace, where I optimized workflows and solved complex issues. Over time, this natural inclination grew, until I took the leap and dedicated myself fully to the world of tech—a decision that feels like a long-awaited return.</p>
+
+       <h2>Efficiency and Innovation at Heart</h2>
+       <p>Today, I’m driven by one goal: finding the smartest, most efficient ways to achieve powerful results. I thrive on solving complex problems, crafting solutions that don’t just work but work seamlessly. Whether it’s a business challenge or a technical hurdle, I believe every solution can be optimized to perform better, faster, and smarter.</p>
+   </section>
+
+   <div class="page-navigation">
+    <a href="index.html" class="prev-page">← Home</a>
+    <a href="professionalJourney.html" class="next-page">Professional Journey →</a>
+</div>
+
+
+   <!-- Footer placeholder -->
+   <div id="footer-placeholder"></div>
+
+   <script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+   </script>
+</body>
+</html>

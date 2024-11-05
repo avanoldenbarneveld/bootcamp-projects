@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Professional Journey</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+   <header>
+       <h1>Professional Journey</h1>
+   </header>
+   <nav id="header-placeholder"></nav>
+   <script>
+       fetch("header.html")
+           .then(response => response.text())
+           .then(data => {
+               document.getElementById("header-placeholder").innerHTML = data;
+           })
+           .catch(error => console.error("Error loading header:", error));
+   </script>
+   
+   <section>
+       <h2>Maximizing Efficiency at the Crossroads of Law and Technology</h2>
+       <p>My professional journey began in law, where I quickly noticed an underlying challenge: many tasks that lawyers handle—document management, portal submissions, and compliance filings—could be optimized through technology. Watching the daily struggles with government portals and repetitive document processes, I realized there was vast potential to enhance lawyers’ productivity with the right templates, platforms, and automation tools. This sparked an interest in finding ways to streamline their work, helping them focus on legal matters rather than tech frustrations.</p>
+
+       <h2>A Leap into Data Management and Optimization</h2>
+       <p>While completing my Master’s in Law, I unexpectedly stepped into data management as an administrative specialist. Here, I started by optimizing Excel data processes with pivot tables and macros, soon freeing up more time for strategic tasks. Curious to deepen my impact, I began exploring our company’s ERP system, learning to manage and streamline workflows not only for my center but for multiple locations across the organization. My work in compliance also introduced me to online risk analysis platforms, further solidifying my understanding of technology’s incredible potential.</p>
+
+       <h2>Continuous Improvement and Expanded Responsibilities</h2>
+       <p>Recognizing my knack for data handling, my company promoted me to manage data processes for six to seven sites, each with unique operational needs. This role allowed me to innovate across centers, ensuring efficient data integration into our ERP system and supporting improvements that benefitted the entire organization. In other roles, I similarly leveraged technology to optimize processes, like analyzing booking platform data to adjust occupancy and pricing strategies across a coastal area.</p>
+
+       <h2>Future Aspirations: Bridging Law, Technology, and Efficiency</h2>
+       <p>My journey, from learning Excel to mastering ERPs, has fueled a deep passion for tech-driven efficiency. Today, through the "Albañiles Digitales" program, I’m equipping myself with advanced programming skills—JavaScript, Node.js, React, and AWS—to merge my legal and technical expertise in a future role. My ideal position would combine these strengths, perhaps developing tech solutions specifically for legal professionals. By connecting my knowledge of law with cutting-edge technology, I’m excited to create impactful solutions that elevate productivity and simplify complex workflows.</p>
+   </section>
+
+   <div class="page-navigation">
+    <a href="background.html" class="prev-page">← background</a>
+    <a href="goalsAndAspirations.html" class="next-page"> Goals and Aspirations →</a>
+</div>
+
+   <div id="footer-placeholder"></div>
+<script>
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Welcome</title>
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav id="header-placeholder"></nav>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading header:", error));
+    </script>
+    
+    <section class="hero">
+        <div class="hero-content">
+            
+            <div class="hero-text">
+                <h1>Build Success with Me</h1>
+                <p>Uncover the skills, dedication, and insights that I bring to drive impactful results. Let’s achieve more together.</p>
+                <a href="background.html" class="hero-button">Learn more about me</a>
+            </div>
+            
+            <img src="img/Alberto.png" alt="Alberto" class="hero-image">
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch("footer.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading footer:", error));
+    </script>
+    
+ </body>
+ 
+</html>
