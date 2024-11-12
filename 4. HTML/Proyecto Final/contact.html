@@ -1,63 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Contact</title>
-   <link rel="stylesheet" href="css/styles.css">
-   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-   <header>
-       <h1>Ready to reach out?</h1>
-   </header>
-   <nav id="header-placeholder"></nav>
-   <script>
-       fetch("header.html")
-           .then(response => response.text())
-           .then(data => {
-               document.getElementById("header-placeholder").innerHTML = data;
-           })
-           .catch(error => console.error("Error loading header:", error));
-   </script>
-   
-   <section class="contact-container">
-       <!-- Form on the left -->
-       <div class="contact-form">
-           <h2>Get in Touch:</h2>
-           <form action="#" method="post">
-               <label for="name">Name:</label>
-               <input type="text" id="name" name="name" required>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar" role="navigation">
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Me</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <a href="index.html" class="btn-primary login-button">Log In</a>
+        </nav>
+    </header>
 
-               <label for="email">Email:</label>
-               <input type="email" id="email" name="email" required>
+<!-- Main Content -->
+<main role="main">
+    <section class="contact-section">
+        <h1>Contact Me</h1>
+        <p>If you have any questions, project ideas, or just want to connect, feel free to reach out!</p>
+    </section>
 
-               <label for="message">Message:</label>
-               <textarea id="message" name="message" rows="4" required></textarea>
+    <!-- Contact and Map Container -->
+    <div class="contact-container">
+        <!-- Contact Form Section -->
+        <section class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-               <button type="submit">Send Message</button>
-           </form>
-       </div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-       <!-- Map iframe on the right -->
-       <div class="contact-map">
-           <h2>Office Adress</h2>
-           <iframe 
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345084746!2d144.9537353154438!3d-37.81720974201344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1274b71%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1604891860123!5m2!1sen!2sus" 
-               loading="lazy">
-           </iframe>
-       </div>
-   </section>
-   <div id="footer-placeholder"></div>
-   <script>
-       fetch("footer.html")
-           .then(response => response.text())
-           .then(data => {
-               document.getElementById("footer-placeholder").innerHTML = data;
-           })
-           .catch(error => console.error("Error loading footer:", error));
-   </script>
-   
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
 
+                <button class="btn-primary" type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Embedded Map Section -->
+        <section class="contact-map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2928.6016723985114!2d-1.640002884526174!3d42.8125262791596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5091d68c0a4d5f%3A0xcfe5c1e4bfb676d2!2sCoworking%20Space%20Location%2C%20Pamplona!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" 
+                width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+            </iframe>
+        </section>
+    </div>
+</main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Alberto van Oldenbarneveld</p>
+        <a href="https://www.linkedin.com/in/albertovan">LinkedIn</a>
+        <a href="https://github.com/albertusdixit">GitHub</a>
+        <a href="contact.html">Contact</a>
+    </footer>
 </body>
 </html>
