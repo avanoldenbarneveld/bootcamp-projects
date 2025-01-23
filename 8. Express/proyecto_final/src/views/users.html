@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    <ul id="users-list"></ul>
+    <form method="post" action="/login/logout">
+        <button type="submit">Cerrar sesión</button>
+    </form>
+
+    <script>
+        fetch('/api/users')
+            .then(response => response.json())
+            .then(users => {
+                const usersList = document.getElementById('users-list');
+                users.forEach(user => {
+                    const li = document.createElement('li');
+                    li.textContent = `${user.email} (${user.type})`;
+                    usersList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</body>
+</html>
