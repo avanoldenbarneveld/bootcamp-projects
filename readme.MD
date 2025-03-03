@@ -38,7 +38,7 @@ This repository contains all the projects and exercises completed during my **Fu
 
 ### 5️⃣ Node.js 🛠️
 - **Objective**: Develop a **backend project** using Node.js for file handling and server-side logic.
-- **More Info**: [Readme](./5.%20Node.js/readme.MD)
+- **More Info**: [Readme](5.%20Node.js/README.md)
 
 ### 6️⃣ Databases 🗄️
 - **Objective**: Learn **SQL** and work with relational databases, handling **queries, migrations, and database management**.
@@ -46,11 +46,11 @@ This repository contains all the projects and exercises completed during my **Fu
 
 ### 7️⃣ Express 🚀
 - **Objective**: Build a **REST API** using **Express.js**, including authentication, middleware, and CRUD operations.
-- **More Info**: [Readme](./7.%20Express/readme.MD)
+- **More Info**: [Readme](./7.%20Express/readme.md)
 
 ### 8️⃣ React ⚛️
 - **Objective**: Develop a **React application** implementing state management, authentication, and component-based architecture.
-- **More Info**: [Readme](./8.%20React/readme.MD)
+- **More Info**: [Readme](./8.%20React/Readme.md)
 
 ### 9️⃣ AWS ☁️
 - **Objective**: Deploy and manage cloud applications using **AWS**, covering **EC2, Docker, and ECS Fargate**.
