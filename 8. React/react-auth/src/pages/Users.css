@@ -1,0 +1,40 @@
+.users-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .users-container h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .users-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .users-container li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .users-container button {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .users-container button:hover {
+    background-color: darkred;
+  }
+  

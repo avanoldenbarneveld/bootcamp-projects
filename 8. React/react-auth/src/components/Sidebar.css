@@ -1,0 +1,72 @@
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+/* Sidebar Title */
+.sidebar h3 {
+    margin-top: 0;
+    color: white;
+}
+
+/* Sidebar List */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Sidebar List Items */
+.sidebar ul li {
+    margin-bottom: 10px;
+    opacity: 1; /* Ensure list items are always visible */
+    background-color: transparent !important; /* ✅ Fix: Override any white background */
+}
+
+/* Sidebar Links */
+.sidebar ul li a {
+    color: white !important; /* ✅ Ensure text is always visible */
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+    font-weight: bold;
+}
+
+/* Fix active and focus visibility */
+.sidebar ul li a:visited,
+.sidebar ul li a:active,
+.sidebar ul li a:focus {
+    color: white !important; /* ✅ Forces visibility */
+}
+
+/* Hover effect */
+.sidebar ul li a:hover {
+    background-color: #34495e;
+    color: #f1f1f1;
+}
+
+/* Sidebar Buttons */
+.sidebar button {
+    width: 100%;
+    background-color: #e74c3c;
+    border: none;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+/* Button Hover Effect */
+.sidebar button:hover {
+    background-color: #c0392b;
+}

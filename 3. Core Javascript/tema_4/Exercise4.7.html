@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Multiplicación en Bucle</title>
+</head>
+<body>
+    <script>
+        const getValidNumber = promptText => {
+            let number;
+            do {
+                number = parseFloat(prompt(promptText));
+                if (isNaN(number)) {
+                    alert("Por favor, introduce un número válido.");
+                }
+            } while (isNaN(number));
+            return number;
+        };
+        const multiplyNumbers = () => {
+            while (true) {
+                let firstNumber = getValidNumber("Introduce el primer número:");
+                let secondNumber = getValidNumber("Introduce el segundo número:");
+
+                const result = firstNumber * secondNumber;
+                alert(`El resultado de ${firstNumber} * ${secondNumber} es ${result}`);
+            }
+        };
+        multiplyNumbers();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+Nota: El archivo .htpasswd está incluido en este directorio, pero como es un archivo oculto (porque empieza con un punto), puede que tengas que activar la opción de "Mostrar archivos ocultos" en tu explorador de archivos para verlo.

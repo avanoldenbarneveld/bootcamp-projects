@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+    <title>Evaluación de Tamaño de Rueda</title>
+</head>
+<body>
+    <script>
+        const promptValues = () => {
+            const diameter = parseFloat(prompt("Por favor, ingrese el diámetro de la rueda (en metros, por ejemplo, 1.2):"));
+            const thickness = parseFloat(prompt("Por favor, ingrese el grosor de la rueda (en metros, por ejemplo, 0.3):"));
+            return [isNaN(diameter) || diameter <= 0 ? NaN : diameter, isNaN(thickness) || thickness <= 0 ? NaN : thickness];
+        }
+        
+        const evaluateWheelSize = () => {
+            const [diameter, thickness] = promptValues();
+
+            if (isNaN(diameter) || isNaN(thickness)) return alert("Por favor, ingrese valores numéricos positivos válidos.");
+
+            const wheelSize = diameter > 1.4 ? "grande" : diameter > 0.8 ? "mediano" : "pequeño";
+            const recommendedThickness = wheelSize === "grande" ? 0.4 : 0.25;
+
+            const message = `La rueda es para un vehículo ${wheelSize}. ${
+                thickness < recommendedThickness ? "El grosor para esta rueda es inferior al recomendado." : ""}`;
+            alert(message);
+        }
+
+        evaluateWheelSize();
+    </script>
+
+    <button onclick="evaluateWheelSize()">Reiniciar Proceso</button>
+    
+</body>
+</html>

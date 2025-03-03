@@ -1,2 +1,0 @@
-const = constantVariable
-let = modifiableVariable

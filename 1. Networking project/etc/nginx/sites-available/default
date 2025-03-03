@@ -1,0 +1,97 @@
+
+# Establecemos que se va a servir el contenido en el puerto 80
+server {
+    listen 80 default_server;
+
+    # Definimos la raíz del contenido
+    root /var/www/html;
+
+    # Este es el HTML inicial, al que se accede automáticamente al entrar a http://0.0.0.0
+    index index.html;
+
+    #No es estrictamente necesario para levantarlo en local, pero lo dejamos indicado.
+    server_name _;
+
+    # Definimos que, si no encuentra un cierto archivo, se va a devolver un error 404.
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Cambiamos el error en /error para que devuelva un error 500
+    location /error {
+        return 500;
+    }
+
+    # Implementamos las respuestas a los métodos HTTP GET, POST, PUT, DELETE en la ruta /metodo
+    location /metodo {
+        default_type application/json;
+
+        if ($request_method = GET) {
+            return 201 '{"mensaje": "Has hecho una petición GET"}';
+        }
+        if ($request_method = POST) {
+            return 201 '{"mensaje": "Has hecho una petición POST"}';
+        }
+        if ($request_method = PUT) {
+            return 201 '{"mensaje": "Has hecho una petición PUT"}';
+        }
+        if ($request_method = DELETE) {
+            return 201 '{"mensaje": "Has hecho una petición DELETE"}';
+        }
+    }
+
+    # Modificamos /cabecera para que devuelva un 204 con una cabecera inventada
+    location /cabecera {
+        add_header Alberto "pamplona";
+        return 204;
+    }
+
+    # Redireccionamos /redireccion1 hacia w3schools.com
+        location /redireccion1 {
+        return 301 https://w3schools.com;
+    }
+
+    # Redireccionamos /redireccion2 hacia /cabecera
+        location /redireccion2 {
+        return 301 http://0.0.0.0/cabecera;
+}
+
+
+    # Añadimos la ruta /respuesta para devolver JSON o HTML dependiendo del parámetro en la URL
+    location /respuesta {
+        if ($arg_json) {
+            add_header Content-Type application/json;
+            return 200 '{"mensaje": "Devolviendo JSON"}';
+        }
+        if ($arg_html) {
+            add_header Content-type text/html;
+            return 200 '<html><body>Devolviendo HTML</body></html>';
+        }
+        return 404;
+    }
+
+    # Guardamos los logs de acceso en /var/www/html/logs.log (Bonus)
+    access_log /var/www/html/logs.log;
+}
+
+# Levantamos otro servidor en el puerto 8000 para exponer únicamente el contenido de /var/www/html
+server {
+    listen 8000;
+    root /var/www/html;
+}
+
+# Levantamos un nuevo servidor con HTTPS en el puerto 443
+server {
+    listen 443 ssl;
+
+    # indico la localización de certificado y clave.
+    ssl_certificate /etc/nginx/certs/certificado1.pem;
+    ssl_certificate_key /etc/nginx/certs/clave1.pem;
+
+    # Indico el tipo de autenticación
+    auth_basic "Contenido restringido";
+    auth_basic_user_file /etc/nginx/.htpasswd;
+
+    # Exponemos /var/www/html
+    root /var/www/html;
+    }
