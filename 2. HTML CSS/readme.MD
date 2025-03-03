@@ -8,25 +8,25 @@ This project is a **fully responsive personal portfolio website** built using **
 ## 📸 Screenshots
 
 ### 1️⃣ Home Page
-![Home Page](./Final_Project/Screenshots/home.png)
+![Home Page](./Screenshots/home.png)
 
 ### 2️⃣ About Page
-![About Page](./Final_Project/Screenshots/about.png)
+![About Page](./Screenshots/about.png)
 
 ### 3️⃣ Projects Page
-![Projects Page](./Final_Project/Screenshots/projects.png)
+![Projects Page](./Screenshots/projects.png)
 
 ### 4️⃣ Skills Page
-![Skills Page](./Final_Project/Screenshots/skills.png)
+![Skills Page](./Screenshots/skills.png)
 
 ### 5️⃣ Contact Page
-![Contact Page](./Final_Project/Screenshots/contact.png)
+![Contact Page](./Screenshots/contact.png)
 
 ### 6️⃣ Login Page
-![Login Page](./Final_Project/Screenshots/index.png)
+![Login Page](./Screenshots/index.png)
 
 ### 7️⃣ Password Recovery Page
-![Password Recovery](./Final_Project/Screenshots/password-recovery.png)
+![Password Recovery](./Screenshots/password-recovery.png)
 
 ## 📄 Page Descriptions
 
@@ -91,7 +91,7 @@ This project is a **fully responsive personal portfolio website** built using **
 └── Informe.pdf         # Project documentation
 ```
 
-## 📥 Installation & Usage
+## 👅 Installation & Usage
 1. **Extract the ZIP file** containing the project.
 2. **Open `index.html` in a browser** to navigate through the website.
 3. Use the navigation menu to explore different sections.
