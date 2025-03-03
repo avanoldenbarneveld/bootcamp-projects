@@ -2,21 +2,6 @@
 
 This repository contains all the projects and exercises completed during my **Full-Stack Development Bootcamp**. Each section corresponds to a key topic covered in the course, with projects demonstrating hands-on experience in **networking, front-end, back-end, databases, and cloud services**.
 
-## 📂 Course Structure
-```
-📦 bootcamp-projects
- ┣ 📂 1. Networking project
- ┣ 📂 2. HTML CSS
- ┣ 📂 3. Core Javascript
- ┣ 📂 4. Client Javascript
- ┣ 📂 5. Node.js
- ┣ 📂 6. Databases
- ┣ 📂 7. Express
- ┣ 📂 8. React
- ┣ 📂 9. AWS
- ┗ 📜 readme.md
-```
-
 ## 🏗️ Projects Overview
 
 ### 1️⃣ Networking Project 🌐
